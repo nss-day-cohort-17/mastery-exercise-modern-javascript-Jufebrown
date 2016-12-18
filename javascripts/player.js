@@ -64,7 +64,7 @@ RBDome.Combatants.Player.prototype.generateClass = function() {
   var randomClass = this.allowedClasses[random];
 
   // Composes the corresponding player class into the player object
-  this.class = new RBDome.GuildHall[randomClass]();
+  this.class = new RBDome.Stable[randomClass]();
 
   // Add the health bonus
   this.health += this.class.healthBonus;

@@ -54,7 +54,7 @@ function classTips() {
       //select elements, creates text for tool tip
       var thisClass = classButtons[i].innerText.toLowerCase().trim();
       thisClass = thisClass[0].toUpperCase() + thisClass.slice(1);
-       var temp = new RBDome.GuildHall[thisClass]();
+       var temp = new RBDome.Stable[thisClass]();
       var htmlString = "Strength Bonus: " + temp.strengthBonus +
                         ", Intelligence Bonus: "+ temp.intelligenceBonus +
                         ", Health Bonus: " + temp.healthBonus +
@@ -275,7 +275,7 @@ function applyClass(e) {
   } else if(whichClassCase === "Select weapon") {
 
   } else {
-  currentPlayer.class = new RBDome.GuildHall[whichClassCase];
+  currentPlayer.class = new RBDome.Stable[whichClassCase];
   }
   console.log("Your choice: ", whichClassCase);
 }
