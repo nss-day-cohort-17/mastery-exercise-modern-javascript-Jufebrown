@@ -1,37 +1,37 @@
-var Gauntlet = Gauntlet || {};
-Gauntlet.Armory = {};
- Gauntlet.Armory.Weapon = function() {
+var RBDome = RBDome || {};
+RBDome.Armory = {};
+ RBDome.Armory.Weapon = function() {
   this.name = "bare hands";
   this.damage = 1;
   this.hands = 2;
-  //console.log(Gauntlet.Armory.Weapon)
+  //console.log(RBDome.Armory.Weapon)
   this.toString = function() {
     return this.name;
   }
 };
-//console.log(Gauntlet.Armory.Weapon)
+//console.log(RBDome.Armory.Weapon)
 
-Gauntlet.Armory.Dagger = function() {
+RBDome.Armory.Dagger = function() {
   this.name = "dagger";
   this.damage = 4;
   this.hands = 1;
 };
 
-Gauntlet.Armory.Dagger.prototype = new Gauntlet.Armory.Weapon();
+RBDome.Armory.Dagger.prototype = new RBDome.Armory.Weapon();
 //Dagger.prototype = new Weapon();
 
-Gauntlet.Armory.BroadSword = function() {
+RBDome.Armory.BroadSword = function() {
   this.name = "broad sword";
   this.damage = 14;
   this.hands = 2;
 };
-Gauntlet.Armory.BroadSword.prototype = new Gauntlet.Armory.Weapon();
+RBDome.Armory.BroadSword.prototype = new RBDome.Armory.Weapon();
 //BroadSword.prototype = new Weapon();
 
-Gauntlet.Armory.WarAxe = function() {
+RBDome.Armory.WarAxe = function() {
   this.name = "war axe";
   this.damage = 18;
   this.hands = 2;
 };
-Gauntlet.Armory.WarAxe.prototype = new Gauntlet.Armory.Weapon();
+RBDome.Armory.WarAxe.prototype = new RBDome.Armory.Weapon();
 //WarAxe.prototype = new Weapon();

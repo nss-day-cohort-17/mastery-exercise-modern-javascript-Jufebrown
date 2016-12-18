@@ -1,13 +1,13 @@
 /*
   TODO: Modularize this code with IIFE or Browserify
  */
-var Gauntlet = Gauntlet || {};
-Gauntlet.GuildHall = {};
+var RBDome = RBDome || {};
+RBDome.GuildHall = {};
 
 /*
   Base function for a player, or enemy, class (profession)
  */
-Gauntlet.GuildHall.PlayerClass = function() {
+RBDome.GuildHall.PlayerClass = function() {
   this.name = "Beggar";
   this.healthBonus = 0;
   this.strengthBonus = 0;
@@ -27,43 +27,43 @@ Gauntlet.GuildHall.PlayerClass = function() {
       - Berserker
       - Monk
  */
-Gauntlet.GuildHall.Fighter = function() {
+RBDome.GuildHall.Fighter = function() {
   this.healthBonus = 20;
   this.strengthBonus = 10;
 };
-Gauntlet.GuildHall.Fighter.prototype = new Gauntlet.GuildHall.PlayerClass();
+RBDome.GuildHall.Fighter.prototype = new RBDome.GuildHall.PlayerClass();
 
 
-Gauntlet.GuildHall.Warrior = function() {
+RBDome.GuildHall.Warrior = function() {
   this.name = "Warrior";
   this.healthBonus = this.healthBonus + 25;
   this.strengthBonus = this.strengthBonus + 30;
 };
-Gauntlet.GuildHall.Warrior.prototype = new Gauntlet.GuildHall.Fighter();
+RBDome.GuildHall.Warrior.prototype = new RBDome.GuildHall.Fighter();
 
 
-Gauntlet.GuildHall.Valkyrie = function() {
+RBDome.GuildHall.Valkyrie = function() {
   this.name = "Valkyrie";
   this.healthBonus = this.healthBonus + 20;
   this.strengthBonus = this.strengthBonus + 10;
 };
-Gauntlet.GuildHall.Valkyrie.prototype = new Gauntlet.GuildHall.Fighter();
+RBDome.GuildHall.Valkyrie.prototype = new RBDome.GuildHall.Fighter();
 
 
-Gauntlet.GuildHall.Berserker = function() {
+RBDome.GuildHall.Berserker = function() {
   this.name = "Berserker";
   this.healthBonus = this.healthBonus + 35;
   this.strengthBonus = this.strengthBonus + 20;
 };
-Gauntlet.GuildHall.Berserker.prototype = new Gauntlet.GuildHall.Fighter();
+RBDome.GuildHall.Berserker.prototype = new RBDome.GuildHall.Fighter();
 
 
-Gauntlet.GuildHall.Monk = function() {
+RBDome.GuildHall.Monk = function() {
   this.name = "Monk";
   this.healthBonus = this.healthBonus + 10;
   this.strengthBonus = this.strengthBonus + 40;
 };
-Gauntlet.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
+RBDome.GuildHall.Monk.prototype = new RBDome.GuildHall.Fighter();
 
 
 /*
@@ -73,49 +73,49 @@ Gauntlet.GuildHall.Monk.prototype = new Gauntlet.GuildHall.Fighter();
       - Conujurer
       - Sorcerer
  */
-Gauntlet.GuildHall.Mage = function() {
+RBDome.GuildHall.Mage = function() {
   this.name = "Mage";
   this.magical = true;
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 20;
 };
-Gauntlet.GuildHall.Mage.prototype = new Gauntlet.GuildHall.PlayerClass();
+RBDome.GuildHall.Mage.prototype = new RBDome.GuildHall.PlayerClass();
 
 
-Gauntlet.GuildHall.Shaman = function() {
+RBDome.GuildHall.Shaman = function() {
   this.name = "Shaman";
   this.healthBonus = this.healthBonus + 5;
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 20;
 };
-Gauntlet.GuildHall.Shaman.prototype = new Gauntlet.GuildHall.Mage();
+RBDome.GuildHall.Shaman.prototype = new RBDome.GuildHall.Mage();
 
 
-Gauntlet.GuildHall.Wizard = function() {
+RBDome.GuildHall.Wizard = function() {
   this.name = "Wizard";
   this.healthBonus = this.healthBonus - 15;
   this.strengthBonus = this.strengthBonus - 25;
   this.intelligenceBonus = this.intelligenceBonus + 40;
 };
-Gauntlet.GuildHall.Wizard.prototype = new Gauntlet.GuildHall.Mage();
+RBDome.GuildHall.Wizard.prototype = new RBDome.GuildHall.Mage();
 
 
-Gauntlet.GuildHall.Conjurer = function() {
+RBDome.GuildHall.Conjurer = function() {
   this.name = "Conjurer";
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
 };
-Gauntlet.GuildHall.Conjurer.prototype = new Gauntlet.GuildHall.Mage();
+RBDome.GuildHall.Conjurer.prototype = new RBDome.GuildHall.Mage();
 
 
-Gauntlet.GuildHall.Sorcerer = function() {
+RBDome.GuildHall.Sorcerer = function() {
   this.name = "Sorcerer";
   this.healthBonus = this.healthBonus - 5;
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 30;
 };
-Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
+RBDome.GuildHall.Sorcerer.prototype = new RBDome.GuildHall.Mage();
 
 
 /*
@@ -124,35 +124,35 @@ Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
       - Ninja
       - Assassin
  */
- Gauntlet.GuildHall.Stealth = function() {
+ RBDome.GuildHall.Stealth = function() {
   this.name = "Stealth";
   this.stealthy = true;
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus - 20;
   this.stealthBonus = this.stealthBonus + 20;
 };
-Gauntlet.GuildHall.Stealth.prototype = new Gauntlet.GuildHall.PlayerClass();
+RBDome.GuildHall.Stealth.prototype = new RBDome.GuildHall.PlayerClass();
 
-Gauntlet.GuildHall.Thief = function() {
+RBDome.GuildHall.Thief = function() {
   this.name = "Thief";
   this.healthBonus = this.healthBonus - 5;
   this.strengthBonus = this.strengthBonus - 20;
   this.stealthBonus = this.stealthBonus + 30;
 };
-Gauntlet.GuildHall.Thief.prototype = new Gauntlet.GuildHall.Stealth();
+RBDome.GuildHall.Thief.prototype = new RBDome.GuildHall.Stealth();
 
-Gauntlet.GuildHall.Ninja = function() {
+RBDome.GuildHall.Ninja = function() {
   this.name = "Ninja";
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus + 20;
   this.stealthBonus = this.stealthBonus + 40;
 };
-Gauntlet.GuildHall.Ninja.prototype = new Gauntlet.GuildHall.Stealth();
+RBDome.GuildHall.Ninja.prototype = new RBDome.GuildHall.Stealth();
 
-Gauntlet.GuildHall.Assassin = function() {
+RBDome.GuildHall.Assassin = function() {
   this.name = "Assassin";
   this.healthBonus = this.healthBonus + 0;
   this.strengthBonus = this.strengthBonus + 0;
   this.stealthBonus = this.stealthBonus + 20;
 };
-Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Stealth();
+RBDome.GuildHall.Assassin.prototype = new RBDome.GuildHall.Stealth();

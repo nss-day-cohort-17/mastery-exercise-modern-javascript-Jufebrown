@@ -17,14 +17,14 @@ var enemyHealth = 0;
 /*
   Test code to generate a human player and an orc player
  */
-var warrior = new Gauntlet.Combatants.Human();
+var warrior = new RBDome.Combatants.Human();
 warrior.generateWeapon() // This will be used for "Surprise me" option
 warrior.generateClass();  // This will be used for "Surprise me" option
 console.log(warrior.toString());
 
-currentEnemy = new Gauntlet.Combatants.Orc();
+currentEnemy = new RBDome.Combatants.Orc();
 currentEnemy.generateClass();
-currentEnemy.generateWeapon(Gauntlet.Armory.BroadSword());
+currentEnemy.generateWeapon(RBDome.Armory.BroadSword());
 console.log(currentEnemy.toString());
 
 
@@ -54,7 +54,7 @@ function classTips() {
       //select elements, creates text for tool tip
       var thisClass = classButtons[i].innerText.toLowerCase().trim();
       thisClass = thisClass[0].toUpperCase() + thisClass.slice(1);
-       var temp = new Gauntlet.GuildHall[thisClass]();
+       var temp = new RBDome.GuildHall[thisClass]();
       var htmlString = "Strength Bonus: " + temp.strengthBonus +
                         ", Intelligence Bonus: "+ temp.intelligenceBonus +
                         ", Health Bonus: " + temp.healthBonus +
@@ -85,7 +85,7 @@ function weaponTips() {
         words += (thisClassArray[j].toString()[0].toUpperCase() + thisClassArray[j].toString().slice(1));
         }
       thisClass = words;
-      var temp = new Gauntlet.Armory[thisClass]();
+      var temp = new RBDome.Armory[thisClass]();
       var htmlString = "Damage: " + temp.damage +
                         ", Hands Required: "+ temp.hands;
       //assigns tool tip to respective class button.
@@ -94,37 +94,6 @@ function weaponTips() {
   }
 
 }
-
-
-//For Spells
-
-function spellTips() {
-  var spellButtons = $("#spell-select .class__link").toArray();
-  for(var i = 0; i < spellButtons.length; i++) {
-    // ignores the surprise me and defeat your enemies buttons
-    if (spellButtons[i].innerText.trim() === "surprise me" || spellButtons[i].innerText === "defeat your enemies") {
-
-    } else {
-      //select elements, creates text for tool tip
-      var thisClassTemp = spellButtons[i].innerText.toLowerCase().trim();
-      var thisClass;
-      var temp = new Gauntlet.SpellBook.Sphere();
-      var htmlString = "Damage: " + temp.damage;
-      //assigns tool tip to respective class button.
-      $(spellButtons[i]).parent().attr("title", htmlString);
-    }
-  }
-
-}
-
-//do same for weapons and spells
-
-
-
-
-
-
-
 
 
 /*
@@ -277,9 +246,9 @@ $(".no-spell").hide();
 
 function grabName() {
   if($("#player-name").val() === "") {
-    Gauntlet.Combatants.Player.prototype.name = "Unknown Adventurer";
+    RBDome.Combatants.Player.prototype.name = "Unknown Adventurer";
   } else {
-     Gauntlet.Combatants.Player.prototype.name = $("#player-name").val();
+     RBDome.Combatants.Player.prototype.name = $("#player-name").val();
   }
 }
 
@@ -290,7 +259,7 @@ $("#select_class").click(grabName);
 
 //Apply Class
 
-var currentPlayer  = new Gauntlet.Combatants.Human();
+var currentPlayer  = new RBDome.Combatants.Human();
 
 
 function applyClass(e) {
@@ -306,7 +275,7 @@ function applyClass(e) {
   } else if(whichClassCase === "Select weapon") {
 
   } else {
-  currentPlayer.class = new Gauntlet.GuildHall[whichClassCase];
+  currentPlayer.class = new RBDome.GuildHall[whichClassCase];
   }
   console.log("Your choice: ", whichClassCase);
 }
@@ -341,15 +310,15 @@ function applyWeapon(e)  {
 //if select Dagger, assigns new Dagger to player
   else if(whichClassCase === "Dagger") {
 
-    currentPlayer.weapon =  new Gauntlet.Armory.Dagger()
+    currentPlayer.weapon =  new RBDome.Armory.Dagger()
   }
 //if select Broad Sword, assigns new BroadSword to player
   else if(whichClassCase === "BroadSword") {
-    currentPlayer.weapon = new Gauntlet.Armory.BroadSword();
+    currentPlayer.weapon = new RBDome.Armory.BroadSword();
   }
 // if selected War Axe, assigns new War Axe to player
   else if(whichClassCase === "WarAxe") {
-    currentPlayer.weapon = new Gauntlet.Armory.WarAxe();
+    currentPlayer.weapon = new RBDome.Armory.WarAxe();
 
   }
 
@@ -369,22 +338,22 @@ function applySpell(e)  {
 
   var whichSpell = e.target.innerText.toLowerCase();
 
-currentPlayer.spell = new Gauntlet.SpellBook.Spell()
+currentPlayer.spell = new RBDome.SpellBook.Spell()
 // if you selected Surprise me, will run random spell function
   if (whichSpell === "surprise me") {
-    currentPlayer.spell = new Gauntlet.SpellBook.Sphere();
+    currentPlayer.spell = new RBDome.SpellBook.Sphere();
 
     console.log("spell: ", currentPlayer.spell);
-    //currentPlayer.spell.damageTypes = new Gauntlet.SpellBook.Sphere();
+    //currentPlayer.spell.damageTypes = new RBDome.SpellBook.Sphere();
 
-    //currentPlayer.spell.damage = new Gauntlet.SpellBook.Sphere.damage;
+    //currentPlayer.spell.damage = new RBDome.SpellBook.Sphere.damage;
     //if selected select Spell, does nothing and moves on to next card
   } else if(whichSpell === "defeat your enemies") {
 
   }
 //if select any spell type, will create a new random Sphere spell with the selected damage type
   else {
-    //currentPlayer.spell = new Gauntlet.SpellBook.Spell()
+    //currentPlayer.spell = new RBDome.SpellBook.Spell()
       currentPlayer.spell.damageTypes = [whichSpell];
     };
 
@@ -409,7 +378,7 @@ function loadCards() {
   playerHealth = currentPlayer.health + currentPlayer.class.healthBonus;
   enemyHealth = currentEnemy.health + currentEnemy.class.healthBonus;
   //loads player name
-  $(".playerName").text([Gauntlet.Combatants.Player.prototype.name]);
+  $(".playerName").text([RBDome.Combatants.Player.prototype.name]);
   //loads player class
   $(".playerClass").text([currentPlayer.class.name]);
   //loads player weapon
