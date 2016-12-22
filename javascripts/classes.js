@@ -8,38 +8,32 @@ RBDome.Stable = {};
   Base function for a player, or enemy, class (profession)
  */
 RBDome.Stable.PlayerClass = function() {
-  this.name = "Beggar";
-  this.healthBonus = 0;
-  this.strengthBonus = 0;
-  this.stealthBonus = 0;
-  this.intelligenceBonus = 0;
-  this.magical = false;
-  this.stealthy = false;
+  this.name = "Robot";
+  this.aerial = false;
   this.toString = function() {
     return this.name;
   }
 };
 
 /*
-    FIGHTER CLASSES
-      - Warrior
-      - Valkyrie
-      - Berserker
-      - Monk
- */
-RBDome.Stable.Fighter = function() {
+Drone Types
+  -Fixed-Wing
+  -Rotor
+*/
+RBDome.Stable.Drone = function() {
+  this.aerial = true;
   this.healthBonus = 20;
   this.strengthBonus = 10;
 };
-RBDome.Stable.Fighter.prototype = new RBDome.Stable.PlayerClass();
+RBDome.Stable.Drone.prototype = new RBDome.Stable.PlayerClass();
 
 
-RBDome.Stable.Warrior = function() {
-  this.name = "Warrior";
+RBDome.Stable.FixedWing = function() {
+  this.name = "FixedWing";
   this.healthBonus = this.healthBonus + 25;
   this.strengthBonus = this.strengthBonus + 30;
 };
-RBDome.Stable.Warrior.prototype = new RBDome.Stable.Fighter();
+RBDome.Stable.FixedWing.prototype = new RBDome.Stable.Drone();
 
 
 RBDome.Stable.Valkyrie = function() {
@@ -47,112 +41,70 @@ RBDome.Stable.Valkyrie = function() {
   this.healthBonus = this.healthBonus + 20;
   this.strengthBonus = this.strengthBonus + 10;
 };
-RBDome.Stable.Valkyrie.prototype = new RBDome.Stable.Fighter();
+RBDome.Stable.Valkyrie.prototype = new RBDome.Stable.Drone();
 
-
-RBDome.Stable.Berserker = function() {
-  this.name = "Berserker";
-  this.healthBonus = this.healthBonus + 35;
-  this.strengthBonus = this.strengthBonus + 20;
-};
-RBDome.Stable.Berserker.prototype = new RBDome.Stable.Fighter();
-
-
-RBDome.Stable.Monk = function() {
-  this.name = "Monk";
-  this.healthBonus = this.healthBonus + 10;
-  this.strengthBonus = this.strengthBonus + 40;
-};
-RBDome.Stable.Monk.prototype = new RBDome.Stable.Fighter();
 
 
 /*
-    MAGICAL CLASSES
-      - Shaman
-      - Wizard
-      - Conujurer
-      - Sorcerer
+    Bipedal Types
+      - Scout
+      - Shock Troop
  */
-RBDome.Stable.Mage = function() {
-  this.name = "Mage";
+RBDome.Stable.Bipedal = function() {
+  this.name = "Bipedal";
   this.magical = true;
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus - 20;
   this.intelligenceBonus = this.intelligenceBonus + 20;
 };
-RBDome.Stable.Mage.prototype = new RBDome.Stable.PlayerClass();
+RBDome.Stable.Bipedal.prototype = new RBDome.Stable.PlayerClass();
 
 
-RBDome.Stable.Shaman = function() {
-  this.name = "Shaman";
+RBDome.Stable.Scout = function() {
+  this.name = "Scout";
   this.healthBonus = this.healthBonus + 5;
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 20;
 };
-RBDome.Stable.Shaman.prototype = new RBDome.Stable.Mage();
+RBDome.Stable.Scout.prototype = new RBDome.Stable.Bipedal();
 
 
-RBDome.Stable.Wizard = function() {
-  this.name = "Wizard";
+RBDome.Stable.ShockTroop = function() {
+  this.name = "ShockTroop";
   this.healthBonus = this.healthBonus - 15;
   this.strengthBonus = this.strengthBonus - 25;
   this.intelligenceBonus = this.intelligenceBonus + 40;
 };
-RBDome.Stable.Wizard.prototype = new RBDome.Stable.Mage();
+RBDome.Stable.ShockTroop.prototype = new RBDome.Stable.Bipedal();
 
-
-RBDome.Stable.Conjurer = function() {
-  this.name = "Conjurer";
-  this.strengthBonus = this.strengthBonus - 10;
-  this.intelligenceBonus = this.intelligenceBonus + 10;
-};
-RBDome.Stable.Conjurer.prototype = new RBDome.Stable.Mage();
-
-
-RBDome.Stable.Sorcerer = function() {
-  this.name = "Sorcerer";
-  this.healthBonus = this.healthBonus - 5;
-  this.strengthBonus = this.strengthBonus - 20;
-  this.intelligenceBonus = this.intelligenceBonus + 30;
-};
-RBDome.Stable.Sorcerer.prototype = new RBDome.Stable.Mage();
 
 
 /*
-    STEALTH CLASSES
-      - Thief
-      - Ninja
-      - Assassin
+    Tank Types
+      - Main Battle Tank
+      - IFV
  */
- RBDome.Stable.Stealth = function() {
-  this.name = "Stealth";
-  this.stealthy = true;
+ RBDome.Stable.Tank = function() {
+  this.name = "Tank";
+  this.Tanky = true;
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus - 20;
-  this.stealthBonus = this.stealthBonus + 20;
+  this.TankBonus = this.TankBonus + 20;
 };
-RBDome.Stable.Stealth.prototype = new RBDome.Stable.PlayerClass();
+RBDome.Stable.Tank.prototype = new RBDome.Stable.PlayerClass();
 
-RBDome.Stable.Thief = function() {
-  this.name = "Thief";
+RBDome.Stable.MBT = function() {
+  this.name = "MBT";
   this.healthBonus = this.healthBonus - 5;
   this.strengthBonus = this.strengthBonus - 20;
-  this.stealthBonus = this.stealthBonus + 30;
+  this.TankBonus = this.TankBonus + 30;
 };
-RBDome.Stable.Thief.prototype = new RBDome.Stable.Stealth();
+RBDome.Stable.MBT.prototype = new RBDome.Stable.Tank();
 
-RBDome.Stable.Ninja = function() {
-  this.name = "Ninja";
+RBDome.Stable.IFV = function() {
+  this.name = "IFV";
   this.healthBonus = this.healthBonus - 10;
   this.strengthBonus = this.strengthBonus + 20;
-  this.stealthBonus = this.stealthBonus + 40;
+  this.TankBonus = this.TankBonus + 40;
 };
-RBDome.Stable.Ninja.prototype = new RBDome.Stable.Stealth();
-
-RBDome.Stable.Assassin = function() {
-  this.name = "Assassin";
-  this.healthBonus = this.healthBonus + 0;
-  this.strengthBonus = this.strengthBonus + 0;
-  this.stealthBonus = this.stealthBonus + 20;
-};
-RBDome.Stable.Assassin.prototype = new RBDome.Stable.Stealth();
+RBDome.Stable.IFV.prototype = new RBDome.Stable.Tank();
