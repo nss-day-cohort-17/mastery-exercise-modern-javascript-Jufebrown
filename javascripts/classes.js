@@ -7,12 +7,14 @@ RBDome.Stable = {};
 /*
   Base function for a player, or enemy
  */
-RBDome.Stable.PlayerClass = function() {
+RBDome.Stable.Robot = function() {
   this.name = "Robot";
   this.toString = function() {
     return this.name;
   }
 };
+
+
 
 /*
 Drone Types
