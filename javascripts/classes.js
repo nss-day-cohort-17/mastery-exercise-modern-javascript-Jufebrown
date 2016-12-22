@@ -30,16 +30,12 @@ RBDome.Stable.Drone.prototype = new RBDome.Stable.PlayerClass();
 
 RBDome.Stable.FixedWing = function() {
   this.name = "FixedWing";
-  this.healthBonus = this.healthBonus + 25;
-  this.strengthBonus = this.strengthBonus + 30;
 };
 RBDome.Stable.FixedWing.prototype = new RBDome.Stable.Drone();
 
 
 RBDome.Stable.Valkyrie = function() {
   this.name = "Valkyrie";
-  this.healthBonus = this.healthBonus + 20;
-  this.strengthBonus = this.strengthBonus + 10;
 };
 RBDome.Stable.Valkyrie.prototype = new RBDome.Stable.Drone();
 
@@ -59,18 +55,12 @@ RBDome.Stable.Bipedal.prototype = new RBDome.Stable.PlayerClass();
 
 RBDome.Stable.Scout = function() {
   this.name = "Scout";
-  this.healthBonus = this.healthBonus + 5;
-  this.strengthBonus = this.strengthBonus - 10;
-  this.intelligenceBonus = this.intelligenceBonus + 20;
 };
 RBDome.Stable.Scout.prototype = new RBDome.Stable.Bipedal();
 
 
 RBDome.Stable.ShockTroop = function() {
   this.name = "ShockTroop";
-  this.healthBonus = this.healthBonus - 15;
-  this.strengthBonus = this.strengthBonus - 25;
-  this.intelligenceBonus = this.intelligenceBonus + 40;
 };
 RBDome.Stable.ShockTroop.prototype = new RBDome.Stable.Bipedal();
 
@@ -89,16 +79,10 @@ RBDome.Stable.Tank.prototype = new RBDome.Stable.PlayerClass();
 
 RBDome.Stable.MBT = function() {
   this.name = "MBT";
-  this.healthBonus = this.healthBonus - 5;
-  this.strengthBonus = this.strengthBonus - 20;
-  this.TankBonus = this.TankBonus + 30;
 };
 RBDome.Stable.MBT.prototype = new RBDome.Stable.Tank();
 
 RBDome.Stable.IFV = function() {
   this.name = "IFV";
-  this.healthBonus = this.healthBonus - 10;
-  this.strengthBonus = this.strengthBonus + 20;
-  this.TankBonus = this.TankBonus + 40;
 };
 RBDome.Stable.IFV.prototype = new RBDome.Stable.Tank();
