@@ -12,24 +12,6 @@ $(document).ready(function() {
   $("#player-setup").show();
 
 
-
-
-
-
-/*
-Default parameters for page
-*/
-
-//hides alerts on page load
-//no class alert
-$(".no-name").hide();
-$(".no-class").hide();
-$(".no-weapon").hide();
-$(".no-spell").hide();
-
-
-
-
   /*
     When any button with card__link class is clicked,
     move on to the next view.
@@ -39,24 +21,6 @@ $(".no-spell").hide();
     var moveAlong = false;
 
     switch (nextCard) {
-      case "card--class":
-        classTips();
-        moveAlong = ($("#player-name").val() !== "");
-        if ($("#player-name").val() === "") {
-          $(".no-name").show();}
-        break;
-      case "card--weapon":
-        weaponTips();
-        moveAlong = (currentPlayer.class !== null);
-        if (currentPlayer.class === null) {
-          $(".no-class").show();}
-        break;
-      case "card--spell":
-        spellTips();
-        moveAlong = (currentPlayer.weapon !== null);
-        if (currentPlayer.weapon === null) {
-          $(".no-weapon").show();}
-        break;
       case "card--battleground":
         moveAlong = (currentPlayer.spell !== undefined);
         if (currentPlayer.spell === undefined) {
