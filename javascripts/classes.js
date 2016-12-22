@@ -52,10 +52,7 @@ RBDome.Stable.Valkyrie.prototype = new RBDome.Stable.Drone();
  */
 RBDome.Stable.Bipedal = function() {
   this.name = "Bipedal";
-  this.magical = true;
-  this.healthBonus = this.healthBonus - 10;
-  this.strengthBonus = this.strengthBonus - 20;
-  this.intelligenceBonus = this.intelligenceBonus + 20;
+  this.maneuverable = true;
 };
 RBDome.Stable.Bipedal.prototype = new RBDome.Stable.PlayerClass();
 
@@ -86,10 +83,7 @@ RBDome.Stable.ShockTroop.prototype = new RBDome.Stable.Bipedal();
  */
  RBDome.Stable.Tank = function() {
   this.name = "Tank";
-  this.Tanky = true;
-  this.healthBonus = this.healthBonus - 10;
-  this.strengthBonus = this.strengthBonus - 20;
-  this.TankBonus = this.TankBonus + 20;
+  this.heavy = true;
 };
 RBDome.Stable.Tank.prototype = new RBDome.Stable.PlayerClass();
 
