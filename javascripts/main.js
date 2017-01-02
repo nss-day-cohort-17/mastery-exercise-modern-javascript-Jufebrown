@@ -119,9 +119,9 @@ function applyClass(e) {
 
 
 
-//event listener for each class button
-
-$("#class-select").click(applyClass);
+//event listener for each class select
+$(".1type").click(applyClass);
+$(".2type").click(applyClass);
 
 
 
