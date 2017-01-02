@@ -1,6 +1,3 @@
-/*
-  TODO: Modularize this code with IIFE or Browserify
- */
 var RBDome = RBDome || {};
 RBDome.Stable = {};
 
