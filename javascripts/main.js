@@ -121,8 +121,8 @@ function applyClass(e) {
 
 
 //event listener for each class select
-$(".1type").click(currentPlayer1.applyClass);
-$(".2type").click(currentPlayer2.applyClass);
+$(".1type").select(currentPlayer1.applyClass);
+$(".2type").select(currentPlayer2.applyClass);
 
 
 
