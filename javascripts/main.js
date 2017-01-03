@@ -96,26 +96,10 @@ $("#select_class").click(grabName);
 
 //Apply Class
 
-var currentPlayer1 = new RBDome.Stable();
-var currentPlayer2 = new RBDome.Stable();
-
-
 function applyClass(e) {
-
-  var whichClass = e.target.innerText.toLowerCase();
-  var whichClassCase = whichClass[0].toUpperCase() + whichClass.slice(1);
-
-  if (whichClassCase === "Surprise me") {
-
-
-    currentPlayer.class = currentPlayer.generateClass()
-
-  } else if(whichClassCase === "Select weapon") {
-
-  } else {
-  currentPlayer.class = new RBDome.Stable[whichClassCase];
-  }
-  console.log("Your choice: ", whichClassCase);
+  console.log(e);
+  var whichClass = e.id;
+  currentPlayer.class = new RBDome.Stable[whichClass];
 }
 
 
