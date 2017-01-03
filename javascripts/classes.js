@@ -20,7 +20,7 @@ Drone Types
 RBDome.Stable.Drone = function() {
   this.aerial = true;
 };
-RBDome.Stable.Drone.prototype = new RBDome.Stable.PlayerClass();
+RBDome.Stable.Drone.prototype = new RBDome.Stable.Robot();
 
 
 RBDome.Stable.FixedWing = function() {
@@ -49,7 +49,7 @@ RBDome.Stable.Bipedal = function() {
   this.name = "Bipedal";
   this.maneuverable = true;
 };
-RBDome.Stable.Bipedal.prototype = new RBDome.Stable.PlayerClass();
+RBDome.Stable.Bipedal.prototype = new RBDome.Stable.Robot();
 
 
 RBDome.Stable.Scout = function() {
@@ -78,7 +78,7 @@ RBDome.Stable.ShockTroop.prototype = new RBDome.Stable.Bipedal();
   this.name = "Tank";
   this.heavy = true;
 };
-RBDome.Stable.Tank.prototype = new RBDome.Stable.PlayerClass();
+RBDome.Stable.Tank.prototype = new RBDome.Stable.Robot();
 
 RBDome.Stable.MBT = function() {
   this.name = "MBT";
