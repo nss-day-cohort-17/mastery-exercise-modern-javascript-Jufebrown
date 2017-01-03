@@ -12,7 +12,6 @@ RBDome.Stable.Robot = function() {
 };
 
 
-
 /*
 Drone Types
   -Fixed-Wing
