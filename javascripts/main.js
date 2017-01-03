@@ -90,7 +90,7 @@ function grabName() {
 }
 
 //event listener for apply name
-$("#select_class").click(grabName);
+$("#battle").click(grabName);
 
 
 
