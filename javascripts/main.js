@@ -96,7 +96,8 @@ $("#select_class").click(grabName);
 
 //Apply Class
 
-var currentPlayer  = new RBDome.Combatants.Human();
+var currentPlayer1 = new RBDome.Stable();
+var currentPlayer2 = new RBDome.Stable();
 
 
 function applyClass(e) {
