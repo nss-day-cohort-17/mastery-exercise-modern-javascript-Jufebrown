@@ -22,17 +22,12 @@ $(document).ready(function() {
 
     switch (nextCard) {
       case "card--battleground":
-        moveAlong = (currentPlayer.spell !== undefined);
-        if (currentPlayer.spell === undefined) {
-          $(".no-spell").show();}
+        moveAlong = (currentPlayer1.name !== undefined);
+        if (currentPlayer1.name === undefined) {
+          $(".no-name").show();}
 
-        else if (currentPlayer.spell !== undefined) {
+        else if (currentPlayer1.name !== undefined) {
           loadCards();
-
-        if (moveAlong) {
-          addBonuses();
-
-        }
         break;
       }
     }
