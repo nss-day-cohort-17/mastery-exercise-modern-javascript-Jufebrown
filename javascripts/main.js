@@ -66,16 +66,9 @@ $(document).ready(function() {
 //Capture Player Name
 
 function grabName() {
-  if($("#player-name").val() === "") {
-    RBDome.Combatants.Player.prototype.name = "Unknown Adventurer";
-  } else {
-     RBDome.Combatants.Player.prototype.name = $("#player-name").val();
-  }
+  currentPlayer1.name = $("#player1-name").val();
+  currentPlayer2.name = $("#player2-name").val();
 }
-
-//event listener for apply name
-$("#battle").click(grabName);
-
 
 
 //Apply Class
