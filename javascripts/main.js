@@ -43,16 +43,18 @@ var player2Health = 0;
 //Capture Player Name
 
 function grabName() {
-  currentPlayer1.name = $("#player1-name").val();
-  currentPlayer2.name = $("#player2-name").val();
+  if(($("#player1-name").val() !== "") && ($("#player2-name").val() !== "")) {
+    currentPlayer1.name = $("#player1-name").val();
+    currentPlayer2.name = $("#player2-name").val();
+  }
 }
 
 
 //Apply Class
 
-function applyClass(e) {
-  console.log(e);
-  var whichClass = e.id;
+function applyClass() {
+  console.log();
+  var whichClass
   currentPlayer.class = new RBDome.Stable[whichClass];
 }
 
