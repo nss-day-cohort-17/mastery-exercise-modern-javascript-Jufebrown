@@ -22,7 +22,17 @@ var player2Health = 0;
         moveAlong = (currentPlayer1.name !== undefined);
         if (currentPlayer1.name === undefined) {
           $(".no-name").show();
-        } else if (currentPlayer1.name !== undefined) {
+          break;
+        } else if (currentPlayer2.name === undefined) {
+          $(".no-name").show();
+          break;
+        } else if (currentPlayer1.name === "") {
+          $(".no-name").show();
+          break;
+        } else if (currentPlayer2.name === "") {
+          $(".no-name").show();
+          break;
+        } else {
           loadCards();
         break;
       }
@@ -32,6 +42,7 @@ var player2Health = 0;
       $("." + nextCard).show();
     }
   });
+
 
 //Capture Player Name
 
