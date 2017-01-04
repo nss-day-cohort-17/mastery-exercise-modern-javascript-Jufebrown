@@ -51,7 +51,7 @@ function applyClass(e) {
 
 
 function readyToRumble() {
-  grabName();
+  grabName()
 }
 
 //event listener for each class select
