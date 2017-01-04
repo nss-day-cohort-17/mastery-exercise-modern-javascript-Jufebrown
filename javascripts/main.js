@@ -89,7 +89,7 @@ function applyClass(e) {
 
 
 //event listener for each class select
-$(".attack").click(readyToRumble);
+$("#battle").click(readyToRumble);
 
 
 
