@@ -9,7 +9,7 @@ $(document).ready(function() {
   /*
     Show the initial view that accepts player name
    */
-  $("#player-setup").show();
+  $("#player-setup").show(slow);
 
 
   /*
