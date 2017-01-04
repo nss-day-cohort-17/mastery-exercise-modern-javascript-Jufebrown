@@ -100,8 +100,7 @@ function applyClass(e) {
 
 
 //event listener for each class select
-$(".1type").select(applyClass);
-$(".2type").select(applyClass);
+$(".attack").click(readyToRumble);
 
 
 
