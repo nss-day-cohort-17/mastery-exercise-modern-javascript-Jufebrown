@@ -80,6 +80,9 @@ function applyClass(e) {
 }
 
 
+function readyToRumble() {
+  grabName();
+}
 
 //event listener for each class select
 $("#battle").click(readyToRumble);
