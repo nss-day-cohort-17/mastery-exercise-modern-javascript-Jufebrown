@@ -62,17 +62,6 @@ $(document).ready(function() {
   });
 
 
-  /*
-    When the back button clicked, move back a view
-   */
-  $(".card__back").click(function(e) {
-    var previousCard = $(this).attr("previous");
-    $(".card").hide();
-    $("." + previousCard).show();
-  });
-
-});
-
 
 //Capture Player Name
 
