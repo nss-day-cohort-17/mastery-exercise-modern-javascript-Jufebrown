@@ -14,51 +14,24 @@ var player2Health = 0;
     move on to the next view.
    */
   $(".card__link").click(function(e) {
-    var nextCard = $(this).attr("next");
+    var nextCard = "card--battleground";
     var moveAlong = false;
 
     switch (nextCard) {
       case "card--battleground":
         moveAlong = (currentPlayer1.name !== undefined);
         if (currentPlayer1.name === undefined) {
-          $(".no-name").show();}
-
-        else if (currentPlayer1.name !== undefined) {
+          $(".no-name").show();
+        } else if (currentPlayer1.name !== undefined) {
           loadCards();
         break;
       }
     }
-
-
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
     }
-
-
   });
-
-
-
-/*
-    When any enter is hit,
-    move on to the next view.
-   */
-  $("html").keypress(function(e) {
-    if(e.keyCode === 13 ) {
-      console.log("enter");
-      if ($("#player-name").val() === "") {
-            $(".no-name").show();
-      } else if ($("#player-name").val() !== "") {
-          grabName();
-          classTips();
-          $(".card--name").hide();
-         $(".card--class").show();
-      }
-   }
-  });
-
-
 
 //Capture Player Name
 
