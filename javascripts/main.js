@@ -3,13 +3,10 @@ var currentPlayer2 = {};
 var player1Health = 0;
 var player2Health = 0;
 
-
-
-$(document).ready(function() {
   /*
     Show the initial view that accepts player name
    */
-  $("#player-setup").show(slow);
+  $("#player-setup").show();
 
 
   /*
