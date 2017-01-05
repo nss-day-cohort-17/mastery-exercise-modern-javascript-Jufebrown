@@ -51,8 +51,8 @@ $("#battle").click(readyToRumble);
 //Load Player and Enemy stats onto page -> function called by selecting defeat your enemies if all selections made
 
 function loadCards() {
-  player1Health = currentPlayer1.health
-  player2Health = currentPlayer2.health
+  player1Health = currentPlayer1.class.health
+  player2Health = currentPlayer2.class.health
   //loads player name
   $(".playerName").text([currentPlayer1.name]);
   //loads player class
