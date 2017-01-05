@@ -46,6 +46,9 @@ function grabName() {
   if(($("#player1-name").val() !== "") && ($("#player2-name").val() !== "")) {
     currentPlayer1.name = $("#player1-name").val();
     currentPlayer2.name = $("#player2-name").val();
+    bothNames = true;
+  } else {
+    $(".no-name").show();
   }
 }
 
