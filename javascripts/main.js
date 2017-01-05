@@ -13,31 +13,31 @@ var bothNames = false;
     When any button with card__link class is clicked,
     move on to the next view.
    */
-  $(".card__link").click(function(e) {
-    var nextCard = "card--battleground";
-    var moveAlong = false;
+  // $(".card__link").click(function(e) {
+  //   var nextCard = "card--battleground";
+  //   var moveAlong = false;
 
-    switch (nextCard) {
-      case "card--battleground":
-        moveAlong = (currentPlayer1.name !== undefined);
-        if (currentPlayer1.name === undefined) {
-          $(".no-name").show();
-        } else if (currentPlayer2.name === undefined) {
-          $(".no-name").show();
-        } else if (currentPlayer1.name === "") {
-          $(".no-name").show();
-        } else if (currentPlayer2.name === "") {
-          $(".no-name").show();
-        } else {
-          loadCards();
-        break;
-      }
-    }
-    if (moveAlong) {
-      $(".card").hide();
-      $("." + nextCard).show();
-    }
-  });
+  //   switch (nextCard) {
+  //     case "card--battleground":
+  //       moveAlong = (currentPlayer1.name !== undefined);
+  //       if (currentPlayer1.name === undefined) {
+  //         $(".no-name").show();
+  //       } else if (currentPlayer2.name === undefined) {
+  //         $(".no-name").show();
+  //       } else if (currentPlayer1.name === "") {
+  //         $(".no-name").show();
+  //       } else if (currentPlayer2.name === "") {
+  //         $(".no-name").show();
+  //       } else {
+  //         loadCards();
+  //       break;
+  //     }
+  //   }
+  //   if (moveAlong) {
+  //     $(".card").hide();
+  //     $("." + nextCard).show();
+  //   }
+  // });
 
 
 //Capture Player Name
