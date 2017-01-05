@@ -57,13 +57,18 @@ function grabName() {
 
 function applyClass() {
   console.log();
-  var whichClass
-  currentPlayer.class = new RBDome.Stable[whichClass];
+  var player1Class = $(".1type").val()
+  var player2Class = $(".2type").val()
+  currentPlayer1.class = new RBDome.Stable[player1Class]
+  currentPlayer2.class = new RBDome.Stable[player2Class]
 }
 
 
 function readyToRumble() {
   grabName()
+  if (bothNames) {
+    applyClass()
+  }
 }
 
 //event listener for each class select
