@@ -2,7 +2,7 @@ var currentPlayer1 = {};
 var currentPlayer2 = {};
 var player1Health = 0;
 var player2Health = 0;
-
+var bothNames = false;
   /*
     Show the initial view that accepts player name
    */
