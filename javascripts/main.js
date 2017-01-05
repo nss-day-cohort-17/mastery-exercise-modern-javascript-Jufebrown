@@ -82,25 +82,20 @@ $("#battle").click(readyToRumble);
 //Load Player and Enemy stats onto page -> function called by selecting defeat your enemies if all selections made
 
 function loadCards() {
-  // tabulates health based on random health and healthBonus
-  playerHealth = currentPlayer.health + currentPlayer.class.healthBonus;
-  enemyHealth = currentEnemy.health + currentEnemy.class.healthBonus;
+  player1Health = currentPlayer1.health
+  player2Health = currentPlayer2.health
   //loads player name
-  $(".playerName").text([RBDome.Combatants.Player.prototype.name]);
+  $(".playerName").text([currentPlayer1.name]);
   //loads player class
-  $(".playerClass").text([currentPlayer.class.name]);
-  //loads player weapon
-  $(".playerWeapon").text([currentPlayer.weapon]);
+  $(".playerClass").text([currentPlayer1.class.name]);
   //loads player health
-  $(".playerHealth").text([playerHealth]);
+  $(".playerHealth").text([player1Health]);
   //loads enemy name
-  $(".monsterName").text("Orc");
+  $(".monsterName").text(currentPlayer2.name);
   //loads enemy class
-  $(".monsterClass").text([currentEnemy.class.name]);
-  //loads enemy weapon
-  $(".monsterWeapon").text([currentEnemy.weapon.name]);
+  $(".monsterClass").text([currentPlayer2.class.name]);
   //loads enemy health
-  $(".monsterHealth").text([enemyHealth]);
+  $(".monsterHealth").text([player2Health]);
   $( ".playerCard" ).animate({right: "0"}, {
     duration: 1000
     });
