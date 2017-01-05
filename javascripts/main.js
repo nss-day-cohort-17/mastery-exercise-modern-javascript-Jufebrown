@@ -68,6 +68,9 @@ function readyToRumble() {
   grabName()
   if (bothNames) {
     applyClass()
+    loadCards()
+    $(".card").hide();
+    $(".card--battleground").show();
   }
 }
 
