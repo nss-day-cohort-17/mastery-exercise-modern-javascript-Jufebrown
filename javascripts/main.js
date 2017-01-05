@@ -76,33 +76,28 @@ function loadCards() {
 
 //checks if battle should continue
 function combatValidation(){
-  if(playerHealth > 0 && enemyHealth > 0){
-    $(".playerHealth").text([playerHealth]);
-    $(".monsterHealth").text([enemyHealth]);
-    //enemyHealth -= 70;
-  }else if(playerHealth > 0 && enemyHealth <= 0){
-    finaleCard();
-    $("body").addClass("win-finale-card");
-    $(".card").hide();
-    $(".card--finale").show();
-    $(".finale-card-win-header").show()
-    console.log("you win")
-  }else if(playerHealth <= 0 && enemyHealth > 0){
-    finaleCard();
-    $("body").addClass("lost-finale-card")
-    $(".card").hide();
-    $(".card--finale" ).show();
-    $(".finale-card-lose-header").show()
-    console.log("you lose")
-  }else if(playerHealth <= 0 && enemyHealth <= 0){
-    finaleCard();
-    $("body").addClass("tie-finale-card")
-    $(".card").hide();
-    $(".card--finale").show();
-    $(".finale-card-tie-header").show()
+  if(player1Health > 0 && player2Health > 0){
+    $(".playerHealth").text([player1Health]);
+    $(".monsterHealth").text([player2Health]);
+  }else if(player1Health > 0 && player2Health <= 0){
+    $(".card").hide()
+    alert("Player 1 wins!")
+  }else if(player1Health <= 0 && player2Health > 0){
+    $(".card").hide()
+    alert("Player 2 wins!")
+  }else if(player1Health <= 0 && player2Health <= 0){
+    $(".card").hide()
+    alert("You Tied!")
   }
 }
 
+function restart() {
+  $(".card").hide();
+  $("#player-setup").show();
+}
 
 //event listener for Attack button
 $(".attack-btn").click(combat);
+
+// event listener for restart
+$(".again").click(restart)
