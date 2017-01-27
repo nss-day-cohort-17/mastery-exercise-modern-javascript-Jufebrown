@@ -1,0 +1,20 @@
+{
+  "name": "mastery-exercise-modern-javascript-Jufebrown",
+  "homepage": "https://github.com/nss-day-cohort-17/mastery-exercise-modern-javascript-Jufebrown",
+  "authors": [
+    "Jufebrown <jufebrown@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
